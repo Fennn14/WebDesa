@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Foto Desa Namo Buaya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: rgba(0, 77, 64, 0.9);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .navbar-brand {
+            font-size: 1.5em;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .navbar .nav-link {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-link:hover {
+            color: #ffeb3b;
+        }
+
+        .hero {
+            background-image: url('assets/images/img1.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 20px;
+            text-align: center;
+            color: #fff;
+            border-bottom: 5px solid #004d40;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 2.8em;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin-top: 10px;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .content h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #004d40;
+        }
+
+        .content p {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .gallery {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .gallery-wrapper {
+            display: flex;
+            animation: scroll 20s linear infinite; /* Animation for scrolling */
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .gallery-item {
+            margin: 15px;
+            width: 320px;
+            background-color: white;
+            border: 8px solid #fff; /* White border */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 3; /* Set aspect ratio to 4:3 */
+            object-fit: cover;
+        }
+
+        .gallery-item h3 {
+            padding: 10px;
+            text-align: center;
+            font-size: 1.4em;
+            color: #004d40;
+        }
+
+        .gallery-item p {
+            padding: 0 10px 10px;
+            text-align: center;
+            font-size: 1em;
+            color: #666;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+        }
+
+        .lightbox-content {
+            display: flex;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox img {
+            max-width: 400px;
+            max-height: 300px;
+            border: 8px solid #fff; /* White border */
+            border-radius: 8px; /* Optional: round the corners */
+        }
+
+        .lightbox .info {
+            margin-left: 20px;
+            color: #333;
+            text-align: left;
+            max-width: 300px;
+        }
+
+        footer {
+            background-color: #004d40;
+            color: #fff;
+            text-align: center;
+            padding: 15px 20px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero h1 {
+                font-size: 2.2em;
+            }
+
+            .content h2 {
+                font-size: 2em;
+            }
+
+            .gallery-item {
+                width: 90%;
+            }
+
+            .lightbox-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .lightbox .info {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <header class="navbar">
+        <a class="navbar-brand" href="#">Desa Namo Buaya</a>
+        <nav>
+            <a class="nav-link" href="index.php">Beranda</a>
+            <a class="nav-link" href="struktur desa.html">Struktur Desa</a>
+            <a class="nav-link" href="sejarah desa.html">Sejarah Desa</a>
+            <a class="nav-link" href="login.php">Masuk</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Galeri Desa Namo Buaya</h1>
+        <p>Jelajahi keindahan dan kekayaan budaya desa kami</p>
+    </section>
+
+    <!-- Static Text Section -->
+    <div class="marquee" style="background-color: #004d40; color: #fff; padding: 10px; text-align: center;">
+        Selamat datang di Galeri Foto Desa Namo Buaya! Jelajahi keindahan dan budaya kami.
+    </div>
+
+    <!-- Content Section -->
+    <section class="content">
+        <h2>Galeri Foto</h2>
+        <p>Keindahan dan aktivitas di Desa Namo Buaya:</p>
+
+        <div class="gallery">
+            <div class="gallery-wrapper" id="gallery-wrapper">
+                <div class="gallery-item" onclick="openLightbox('assets/images/b1.jpg', 'Desa Namo Buaya mengadakan acara pembersihan lingkungan yang melibatkan seluruh warga.')">
+                    <img src="assets/images/b1.jpg" alt="Kegiatan Desa 1">
+                    <h3>Musyawarah Desa</h3>
+                    <p>Polsek Sultan Daulat Polres Subulussalam mediasi tapal batas Desa Namo Buaya dan Desa Batu Napal dalam program Jumat Curhat yang diadakan di Warung LEHA Desa Namo Buaya Kec. Sultan Daulat Kota Subulussalam. Jumat, 27 september 2024..</p>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('assets/images/b2.jpg', 'Warga desa berpartisipasi dalam festival budaya tahunan dengan berbagai pertunjukan seni.')">
+                    <img src="assets/images/b3.jpg" alt="Kegiatan Desa 2">
+                    <h3>Kegiatan Desa</h3>
+                    <p>Festival budaya tahunan dengan berbagai pertunjukan seni.</p>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('assets/images/b3.jpg', 'Keindahan alam Desa Namo Buaya menjadi daya tarik wisatawan lokal dan mancanegara.')">
+                    <img src="assets/images/b2.jpg" alt="Kegiatan Desa 3">
+                    <h3>Wisata</h3>
+                    <p> irigasi Namo Buaya yang ada di Kecamatan Sultan Daulat. Lokasi ini, bukan irigasi sembarangan pada umumnya. Namun, di sana menawarkan keasrian hutan yang berpadu dengan batu-batuan besar yang ‘terbelah’ oleh aliran air..</p>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('assets/images/b3.jpg', 'Keindahan alam Desa Namo Buaya menjadi daya tarik wisatawan lokal dan mancanegara.')">
+                    <img src="assets/images/banjir.jpg" alt="Kegiatan Desa 3">
+                    <h3>Berita Desa</h3>
+                    <p>Banjir Subulussalam juga Rendam Puluhan Rumah di Rikit, Namo Buaya, Sultan Daulat
+
+
+                        Artikel ini telah tayang di SerambiNews.com dengan judul Banjir Subulussalam juga Rendam Puluhan Rumah di Rikit, Namo Buaya, Sultan Daulat, 
+                        </p>
+                </div>
+           
+                <!-- Tambahkan lebih banyak item galeri sesuai kebutuhan -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Section -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+            <div class="info" id="lightbox-info"></div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Desa Namo Buaya. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openLightbox(imageSrc, infoText) {
+            document.getElementById('lightbox-img').src = imageSrc;
+            document.getElementById('lightbox-info').innerText = infoText;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

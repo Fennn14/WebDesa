@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Desa | Namo Buaya</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: rgba(0, 77, 64, 0.9);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .navbar-brand {
+            font-size: 1.5em;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .navbar .nav-link {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-link:hover {
+            color: #ffeb3b;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('assets/images/image1.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 3em;
+            z-index: 2;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            z-index: 2;
+            position: relative;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Content Section */
+        .content {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #004d40;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        .gallery-item {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px; /* Height fixed for consistency */
+            object-fit: cover;
+        }
+
+        .gallery-item h3 {
+            font-size: 1.8em;
+            margin: 10px 0;
+            color: #004d40;
+        }
+
+        .gallery-item p {
+            padding: 0 10px 20px;
+            font-size: 1em;
+            color: #666;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #004d40;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar .nav-link {
+                margin: 10px 0;
+            }
+
+            .hero {
+                padding: 80px 20px;
+            }
+
+            .content h2 {
+                font-size: 2em;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr; /* Satu kolom pada layar kecil */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <header class="navbar">
+        <a class="navbar-brand" href="#">Desa Namo Buaya</a>
+        <nav>
+            <a class="nav-link" href="index.php">Beranda</a>
+            <a class="nav-link" href="galeri.html">Galeri</a>
+            <a class="nav-link" href="struktur desa.html">Struktur Desa</a>
+            <a class="nav-link" href="login.php">Masuk</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Sejarah Desa Namo Buaya</h1>
+        <p>Pelajari perjalanan sejarah yang membentuk desa kami</p>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content">
+        <h2>Timeline Sejarah</h2>
+        <p>Desa Namo Buaya memiliki sejarah yang kaya dan menarik. Berikut adalah beberapa momen penting dalam sejarah kami:</p>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="assets/images/history1.jpg" alt="Tahun Berdirinya">
+                <h3>Awal Mula Berdirinya</h3>
+                <p>Dahulunya Kampong Namo Buaya adalah bagian dari Kerajaan Batu-batu yang dipimpin oleh Sultan Daulat Sambo. Sebelum tahun 1960, Kampong Namo Buaya masih merupakan hutan belantara. Pada tahun 1965, orang-orang mulai membuka ladang dan pada tahun 1970 mulai ada yang mendiami daerah ini.</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/images/history2.jpeg" alt="Pembangunan Infrastruktur">
+                <h3>Pembangunan Infrastruktur</h3>
+                <p>Pembangunan infrastruktur besar-besaran termasuk jalan utama dan jembatan yang menghubungkan desa dengan kota-kota terdekat.</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/images/history3.jpg" alt="Pembentukan Sekolah">
+                <h3> Pembentukan Sekolah</h3>
+                <p>Didirikan sekolah dasar pertama di desa, menyediakan pendidikan formal untuk anak-anak desa.</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/images/history4.jpeg" alt="Wisata">
+                <h3>Wisata Desa</h3>
+                <p>Sejak pemukiman warga pindah ke dataran “deleng” yaitu pemukiman Kampong Namo Buaya sekarang ini diperkirakan tahun 1984.</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/images/history5.jpeg" alt="Makam Pahlawan Namo Buaya">
+                <h3>Makam Pahlawan Sultan Daulat</h3>
+                <p>Kunjungan Walikota , walikota subulussalam berkunjung ke makam sultan daulat sambo yaitu salah satu pahlawan nasional indonesia yang berada di kota subulussalam , sultan daulat, tepatnya di desa namo buaya.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/history6.jpeg" alt="Pemilihan Kepala Kampong">
+                <h3>Pemilihan Kepala Kampong</h3>
+                <p>Setelah pemilihan, saudara Dewano Sambo terpilih menjadi kepala Kampong untuk periode 2012-2017.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Desa Namo Buaya. All rights reserved.</p>
+    </footer>
+</body>
+</html>
